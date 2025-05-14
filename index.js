@@ -4,10 +4,9 @@ venom
   .create({
     session: "bot-wa",
     headless: true,
-    useChrome: false,
+    useChrome: false, // ⬅️ Jangan pakai Chrome lokal, biarkan Venom pakai Chromium Puppeteer
     logQR: true,
     multidevice: true,
-    executablePath: "/usr/bin/chromium-browser", // Path ke Chromium
     browserArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
     catchQR: (base64Qrimg, asciiQR, attempts, urlCode) => {
       console.clear();
