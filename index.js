@@ -3,8 +3,9 @@ const venom = require("venom-bot");
 venom
   .create({
     session: "bot-wa",
-    headless: false,
-    useChrome: true,
+    headless: true,
+    useChrome: false,
+    logQR: true,
     multidevice: true,
     catchQR: (base64Qrimg, asciiQR, attempts, urlCode) => {
       console.clear();
