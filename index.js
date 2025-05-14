@@ -5,7 +5,7 @@ venom
     session: "bot-wa",
     headless: true,
     useChrome: false, // ⬅️ Jangan pakai Chrome lokal, biarkan Venom pakai Chromium Puppeteer
-    executablePath: "/snap/bin/chromium", // <- ganti ini jika beda
+    executablePath: "/usr/bin/chromium-browser",
     logQR: true,
     multidevice: true,
     browserArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
