@@ -4,18 +4,25 @@ venom
   .create({
     session: "bot-wa",
     headless: true,
-    useChrome: false, // ⬅️ Jangan pakai Chrome lokal, biarkan Venom pakai Chromium Puppeteer
-    executablePath: "/usr/bin/chromium-browser",
+    useChrome: false,
+    executablePath: "/usr/bin/chromium-browser", // atau hasil dari "which chromium-browser"
     logQR: true,
     multidevice: true,
-    browserArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
+    qrTimeout: 0,
     catchQR: (base64Qrimg, asciiQR, attempts, urlCode) => {
       console.clear();
       console.log("🔁 QR Code baru! Silakan scan lagi:\n");
       console.log(asciiQR);
       console.log(`Percobaan ke: ${attempts}`);
     },
-    qrTimeout: 0,
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-gpu",
+      "--disable-dev-shm-usage",
+      "--disable-software-rasterizer",
+      "--disable-features=VizDisplayCompositor",
+    ],
   })
   .then((client) => start(client))
   .catch((error) => {
