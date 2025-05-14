@@ -7,10 +7,11 @@ venom
     useChrome: false,
     logQR: true,
     multidevice: true,
+    browserArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
     catchQR: (base64Qrimg, asciiQR, attempts, urlCode) => {
       console.clear();
       console.log("🔁 QR Code baru! Silakan scan lagi:\n");
-      console.log(asciiQR); // tampilkan di terminal
+      console.log(asciiQR);
       console.log(`Percobaan ke: ${attempts}`);
     },
     qrTimeout: 0,
