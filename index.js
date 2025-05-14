@@ -7,6 +7,7 @@ venom
     useChrome: false,
     logQR: true,
     multidevice: true,
+    executablePath: "/usr/bin/chromium-browser", // Path ke Chromium
     browserArgs: ["--no-sandbox", "--disable-setuid-sandbox"],
     catchQR: (base64Qrimg, asciiQR, attempts, urlCode) => {
       console.clear();
